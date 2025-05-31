@@ -55,6 +55,21 @@
         height: auto;
         cursor: pointer;
       }
+      .scrollable-table {
+        max-height: 200px;
+        overflow-y: auto;
+        display: block;
+      }
+      .scrollable-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .scrollable-table th,
+      .scrollable-table td {
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        text-align: left;
+      }
     </style>
   </head>
   <body>
@@ -79,16 +94,18 @@
         <tbody></tbody>
       </table>
       <h3>Pembayaran (USD)</h3>
-      <table class="payments">
-        <thead>
-          <tr>
-            <th>Tanggal</th>
-            <th>Nilai</th>
-            <th>Bukti Bayar</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <div class="scrollable-table">
+        <table class="payments">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Nilai</th>
+              <th>Bukti Bayar</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
     <div class="tab-content" id="rupiah" style="display: none">
       <h3>Pinjaman (IDR)</h3>
@@ -102,16 +119,18 @@
         <tbody></tbody>
       </table>
       <h3>Pembayaran (IDR)</h3>
-      <table class="payments">
-        <thead>
-          <tr>
-            <th>Tanggal</th>
-            <th>Nilai</th>
-            <th>Bukti Bayar</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <div class="scrollable-table">
+        <table class="payments">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Nilai</th>
+              <th>Bukti Bayar</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
 
     <script>
@@ -140,6 +159,12 @@
           payments: [
             { date: "2024-03-01", amount: 50, proofUrl: "assets/gambar1.jpg" },
             { date: "2024-04-05", amount: 100, proofUrl: "assets/gambar2.jpg" },
+            { date: "2024-03-01", amount: 50, proofUrl: "assets/gambar1.jpg" },
+            { date: "2024-04-05", amount: 100, proofUrl: "assets/gambar2.jpg" },
+            { date: "2024-03-01", amount: 50, proofUrl: "assets/gambar1.jpg" },
+            { date: "2024-04-05", amount: 100, proofUrl: "assets/gambar2.jpg" },
+            { date: "2024-03-01", amount: 50, proofUrl: "assets/gambar1.jpg" },
+            { date: "2024-04-05", amount: 100, proofUrl: "assets/gambar2.jpg" },
           ],
         },
         rupiah: {
@@ -162,6 +187,11 @@
         },
       };
 
+      function formatDateToIndonesian(dateString) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(dateString).toLocaleDateString("id-ID", options);
+      }
+
       function populateTable(currency) {
         const loansTable = document.querySelector(`#${currency} .loans tbody`);
         const paymentsTable = document.querySelector(
@@ -171,33 +201,33 @@
         loansTable.innerHTML = data[currency].loans
           .map(
             (loan) => `
-            <tr>
-              <td>${loan.date}</td>
-              <td>${currency === "dollar" ? "$" : "Rp"} ${
+              <tr>
+                <td>${formatDateToIndonesian(loan.date)}</td>
+                <td>${currency === "dollar" ? "$" : "Rp"} ${
               currency === "dollar"
                 ? loan.amount
                 : loan.amount.toLocaleString("id-ID")
             }</td>
-            </tr>
-          `
+              </tr>
+            `
           )
           .join("");
 
         paymentsTable.innerHTML = data[currency].payments
           .map(
             (payment) => `
-            <tr>
-              <td>${payment.date}</td>
-              <td>${currency === "dollar" ? "$" : "Rp"} ${
+              <tr>
+                <td>${formatDateToIndonesian(payment.date)}</td>
+                <td>${currency === "dollar" ? "$" : "Rp"} ${
               currency === "dollar"
                 ? payment.amount
                 : payment.amount.toLocaleString("id-ID")
             }</td>
-              <td><img class="bukti" src="${
-                payment.proofUrl
-              }" alt="Bukti Pembayaran" /></td>
-            </tr>
-          `
+                <td><img class="bukti" src="${
+                  payment.proofUrl
+                }" alt="Bukti Pembayaran" /></td>
+              </tr>
+            `
           )
           .join("");
       }
