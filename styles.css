@@ -2,13 +2,8 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden;
-  background: #f9f9f9;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+  height: 100%;
+  overflow: auto; /* Pastikan halaman bisa di-scroll */
 }
 
 .container {
@@ -23,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh; /* Pastikan container mencakup seluruh tinggi viewport */
 }
 
 .balance-container {

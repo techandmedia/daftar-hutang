@@ -155,6 +155,7 @@ function displayBalances() {
 
   const balanceContainer = document.createElement("div");
   balanceContainer.className = "balance-container";
+  balanceContainer.style.marginTop = "20px"; // Tambahkan margin agar tidak menempel
   balanceContainer.innerHTML = `
     <h3>Saldo Akhir</h3>
     <p>Saldo Hutang Dolar: $${dollarBalance}</p>
@@ -162,6 +163,8 @@ function displayBalances() {
   `;
 
   const container = document.querySelector(".container");
+  container.style.overflow = "auto"; // Pastikan container bisa di-scroll
+  container.style.paddingBottom = "50px"; // Tambahkan padding bawah untuk ruang ekstra
   container.appendChild(balanceContainer);
 }
 
