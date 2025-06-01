@@ -17,29 +17,78 @@ function showTab(tabId) {
 const data = {
   dollar: {
     loans: [
-      { date: "2024-01-10", amount: 100 },
-      { date: "2024-02-15", amount: 250 },
+      { date: "2024-01-10", amount: 10000 },
+      { date: "2024-01-10", amount: 10000 },
+      { date: "2024-01-10", amount: 10000 },
     ],
     payments: [
-      { date: "2024-03-01", amount: 50, proofUrl: "assets/gambar1.jpg" },
-      { date: "2024-04-05", amount: 100, proofUrl: "assets/gambar2.jpg" },
+      {
+        date: "2025-06-01T08:54:36",
+        amount: 500,
+        proofUrl: "assets/dolar/PHOTO-2025-06-01-08-54-36.jpg",
+      },
+      {
+        date: "2024-12-24T21:01:09",
+        amount: 500,
+        proofUrl: "assets/dolar/PHOTO-2024-12-24-21-01-09.jpg",
+      },
+      {
+        date: "2024-08-28T21:05:18",
+        amount: 500,
+        proofUrl: "assets/dolar/PHOTO-2024-08-28-21-05-18.jpg",
+      },
+      {
+        date: "2024-06-25T19:40:52",
+        amount: 400,
+        proofUrl: "assets/dolar/PHOTO-2024-06-25-19-40-52.jpg",
+      },
+      {
+        date: "2024-05-31T08:20:50",
+        amount: 700,
+        proofUrl: "assets/dolar/PHOTO-2024-05-31-08-20-50.jpg",
+      },
+      {
+        date: "2024-04-29T17:04:02",
+        amount: 600,
+        proofUrl: "assets/dolar/PHOTO-2024-04-29-17-04-02.jpg",
+      },
+      {
+        date: "2024-03-01T18:20:17",
+        amount: 400,
+        proofUrl: "assets/dolar/PHOTO-2024-03-01-18-20-17.jpg",
+      },
+      {
+        date: "2024-01-30T20:05:53",
+        amount: 640,
+        proofUrl: "assets/dolar/PHOTO-2024-01-30-20-05-53.jpg",
+      },
     ],
   },
   rupiah: {
     loans: [
-      { date: "2024-01-12", amount: 1000000 },
-      { date: "2024-02-20", amount: 2500000 },
+      { date: "2024-09-21", amount: 15000000 },
+      { date: "2025-01-04", amount: 15000000 },
     ],
     payments: [
       {
-        date: "2024-03-02",
-        amount: 500000,
-        proofUrl: "assets/gambar1.jpg",
+        date: "2025-04-30T16:44:12",
+        amount: 7000000,
+        proofUrl: "assets/rupiah/PHOTO-2025-04-30-16-44-12.jpg",
       },
       {
-        date: "2024-04-07",
-        amount: 1000000,
-        proofUrl: "assets/gambar2.jpg",
+        date: "2025-03-01T08:59:07",
+        amount: 8000000,
+        proofUrl: "assets/rupiah/PHOTO-2025-03-01-08-59-07.jpg",
+      },
+      {
+        date: "2024-10-25T16:02:06",
+        amount: 7000000,
+        proofUrl: "assets/rupiah/PHOTO-2024-10-25-16-02-06.jpg",
+      },
+      {
+        date: "2024-03-02T00:00:00",
+        amount: 8000000,
+        proofUrl: "assets/rupiah/PHOTO-2024-03-02-00-00-00.jpg",
       },
     ],
   },
