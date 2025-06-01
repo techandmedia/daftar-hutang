@@ -86,9 +86,9 @@ const data = {
         proofUrl: "assets/rupiah/PHOTO-2024-10-25-16-02-06.jpg",
       },
       {
-        date: "2024-03-02T00:00:00",
+        date: "2024-09-28T00:00:00",
         amount: 8000000,
-        proofUrl: "assets/rupiah/PHOTO-2024-03-02-00-00-00.jpg",
+        proofUrl: "assets/rupiah/PHOTO-2024-09-28-14-46-35.jpg",
       },
     ],
   },
