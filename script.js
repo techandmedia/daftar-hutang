@@ -68,8 +68,19 @@ const data = {
     loans: [
       { date: "2024-09-21", amount: 15000000 },
       { date: "2025-01-04", amount: 15000000 },
+      { date: "2025-06-26", amount: 35000000 },
     ],
     payments: [
+      {
+        date: "2025-09-29T00:00:00",
+        amount: 5000000,
+        proofUrl: "assets/rupiah/PHOTO-2025-09-29.jpeg",
+      },
+      {
+        date: "2025-07-28T00:00:00",
+        amount: 8000000,
+        proofUrl: "assets/rupiah/PHOTO-2025-07-28.jpeg",
+      },
       {
         date: "2025-04-30T16:44:12",
         amount: 7000000,
